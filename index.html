@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu de quilles</title>
+</head>
+<body>
+  <h1>Jeu de quilles</h1>
+
+  <div id="infos">
+    <p>Frame numéro: <span id="currentFrame"></span></p>
+    <p>Lancer numéro: <span id="currentLancer"></span></p>
+    <form id="jeuForm">
+        <label for="resultat">Nombre de quille touchées:</label>
+        <input type="number" id="resultat" min="0" max="15">
+        <button type="button" id="touchée">Submit</button>
+    </form>
+    <ul id="tab"></ul>
+    <p>Total Bonus: <span id="totalBonus"></span></p>
+    <p>Score total: <span id="score"></span></p>
+    <p>Pending Strikes: <span id="pendingStrikes"></span></p>
+    <p>Pending Spares: <span id="pendingSpares"></span></p>
+  </div>
+  <script src="jeu.js"></script>
+</body>
+</html>
