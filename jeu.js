@@ -136,6 +136,9 @@ document.addEventListener("DOMContentLoaded", () => {
           } else if (currentFrame === 5 && currentLancer === 4) {
               currentLancer = 4;
           }
+          else if (currentFrame === 5 && currentLancer === 5) {
+            currentLancer = "-";
+        }
 
           // Mise à jour du score total et des éléments d'interface utilisateur
           currentScore += parseInt(resultatInput.value);
@@ -154,19 +157,20 @@ document.addEventListener("DOMContentLoaded", () => {
               let bonusText = "";
 
               if (isStrike(i)) {
+                  
                   bonusText = " (Strike Bonus: " + findNextThrows(i, StrikeBonusThrows) + ")";
               } else if (isSpare(i)) {
                   bonusText = " (Spare Bonus: " + findNextThrows(i, SpareBonusThrows) + ")";
               }
 
-              let frameScoreText = frameScore[i] !== undefined ? "Frame " + i + " score: " + frameScore[i] : "";
+              let frameScoreText = frameScore[i] !== undefined ? "Frame " + i + " score sans bonus: " + frameScore[i] : "";
               let listItem = frameContent ? "<li>" + frameContent + strikeText + spareText + bonusText + "</li>" + frameScoreText : "<li></li>";
               tab.innerHTML += listItem;
           }
 
           // Mise à jour de l'affichage des strikes et spares en attente
-          pendingStrikesSpan.textContent = pendingStrikes.join(", ");
-          pendingSparesSpan.textContent = pendingSpares.join(", ");
+          // pendingStrikesSpan.textContent = pendingStrikes.join(", ");
+          // pendingSparesSpan.textContent = pendingSpares.join(", ");
 
           // Mise à jour de la valeur maximale de l'input
           updateMaxInputValue();
